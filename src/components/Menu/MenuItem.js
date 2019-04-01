@@ -3,8 +3,24 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "../../scss/App.scss";
 
+const sortedItems = (items, filter) => {
+  switch (filter) {
+    case "SORT_DESCENDING":
+      return items.slice().sort(function(a, b) {
+        return b.price - a.price;
+      });
+    case "SORT_ASCENDING":
+      return items.slice().sort(function(a, b) {
+        return a.price - b.price;
+      });
+    case "SORT_INITIAL":
+    default:
+      return items;
+  }
+};
+
 const mapStateToProps = state => {
-  return { items: state.items };
+  return { items: sortedItems(state.cartReducer.items, state.sortReducer) };
 };
 
 const flavours = [

@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import MenuItem from "./Menu/MenuItem";
 import MenuTitle from "./Menu/MenuTitle";
-import MenuSort from "./Menu/MenuSort";
+import SortLink from "./Menu/SortLink";
+import { SortFilters } from "../actions";
 
 const MapStateToProps = state => {
-  return { items: state.items };
+  return { items: state.cartReducer.items };
 };
 
 class MenuList extends Component {
@@ -54,13 +55,8 @@ class MenuList extends Component {
     return (
       <div className="menuList">
         <MenuTitle title="Our Menu" />
-        <MenuSort
-          sortInitial={this.sortInitial}
-          sortPriceUp={this.sortPriceUp}
-          sortPriceDown={this.sortPriceDown}
-          handleChange={this.handleChange}
-          search={search}
-        />
+        <SortLink filter={SortFilters.SORT_DESCENDING}>DOWN</SortLink>
+        {/*  <MenuSorted handleChange={this.handleChange} search={search} /> */}
         <MenuItem searchMe={search} />
       </div>
     );

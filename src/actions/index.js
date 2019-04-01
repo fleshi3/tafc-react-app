@@ -1,6 +1,14 @@
 // actions/index.js
-import { ADD_ARTICLE } from "../constants/action-types";
 
-export function addArticle(payload) {
-  return { type: ADD_ARTICLE, payload };
-}
+// action objects
+export const SortFilters = {
+  SORT_INITIAL: "SORT_INITIAL",
+  SORT_DESCENDING: "SORT_DESCENDING",
+  SORT_ASCENDING: "SORT_ASCENDING"
+};
+
+// action creator
+export const setSortFilter = filter => ({
+  type: "SET_SORT_FILTER",
+  filter
+});

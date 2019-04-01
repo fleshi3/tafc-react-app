@@ -1,18 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { SortFilters, setSortFilter } from "../../actions/index";
+import { connect } from "react-redux";
+import Button from "./SortButton";
 
 const MenuSort = props => {
-  const { sortInitial, sortPriceDown, sortPriceUp, handleChange } = props;
-  const { search } = props;
+  const { handleChange, search } = props;
+  const { SORT_INITIAL, SORT_DESCENDING, SORT_ASCENDING } = SortFilters;
   return (
     <div className="sortList">
-      <button type="button" onClick={sortInitial}>
+      <button type="button" filter={SORT_INITIAL}>
         Popularity
       </button>
-      <button type="button" onClick={sortPriceDown}>
+      <button type="button" filter={SORT_DESCENDING}>
         Price (D)
       </button>
-      <button type="button" onClick={sortPriceUp}>
+      <button type="button" filter={SORT_ASCENDING}>
         Price (U)
       </button>
       <div className="searchContainer">
@@ -24,24 +27,23 @@ const MenuSort = props => {
           onChange={handleChange}
         />
       </div>
+      <div>
+        <Button filter="SORT_DESCENDING" />
+      </div>
     </div>
   );
 };
 
 MenuSort.propTypes = {
-  sortInitial: PropTypes.func,
-  sortPriceDown: PropTypes.func,
-  sortPriceUp: PropTypes.func,
   handleChange: PropTypes.func,
   search: PropTypes.string
 };
 
 MenuSort.defaultProps = {
-  sortInitial: () => null,
-  sortPriceDown: () => null,
-  sortPriceUp: () => null,
   handleChange: () => null,
   search: ""
 };
 
-export default MenuSort;
+const MenuSorted = connect(mapDispatchToProps)(MenuSort);
+
+export default MenuSorted;
