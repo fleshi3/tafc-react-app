@@ -1,0 +1,6 @@
+// Widescreens
+@include mediaXL {
+        .menuContainer {
+                grid-template-columns: repeat(5, 1fr);
+        }
+}
