@@ -521,4 +521,12 @@ body {
   color: orange;
 }
 
+.cartContainer {
+  background: orange;
+  color: black;
+  position: relative;
+  z-index: 999;
+  margin-bottom: 100vh;
+}
+
 @import "mobile";

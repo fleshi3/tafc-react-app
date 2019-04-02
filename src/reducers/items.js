@@ -6,7 +6,7 @@ const foodItems = [
     price: 12.99,
     image: "/img/menu/breastfillet.jpg",
     id: 1,
-    key: 1
+    quantity: 0
   },
   {
     title: "Thigh Fillets (3pc)",
@@ -14,8 +14,7 @@ const foodItems = [
     flavour: true,
     price: 12.99,
     image: "/img/menu/thighfillet.jpg",
-    id: 2,
-    key: 2
+    id: 2
   },
   {
     title: "Chicken Poppers",
@@ -23,8 +22,7 @@ const foodItems = [
     flavour: true,
     price: 8.5,
     image: "/img/menu/poppers.jpg",
-    id: 3,
-    key: 3
+    id: 3
   },
   {
     title: "Chicken Wings (6pc)",
@@ -33,7 +31,6 @@ const foodItems = [
     price: 11.99,
     image: "/img/menu/honeysoy.jpg",
     id: 4,
-    key: 4,
     special: "Smokey Honey Soy"
   },
   {
@@ -43,7 +40,6 @@ const foodItems = [
     price: 7,
     image: "/img/menu/fries.jpg",
     id: 5,
-    key: 5,
     special: "N/A"
   },
   {
@@ -53,7 +49,6 @@ const foodItems = [
     price: 6.5,
     image: "/img/menu/gems.jpg",
     id: 6,
-    key: 6,
     special: "N/A"
   },
   {
@@ -63,7 +58,6 @@ const foodItems = [
     price: 6,
     image: "/img/menu/slaw.jpg",
     id: 7,
-    key: 7,
     special: "N/A"
   }
 ];

@@ -12,3 +12,17 @@ export const setSortFilter = filter => ({
   type: "SET_SORT_FILTER",
   filter
 });
+
+export function addToCart(items) {
+  return {
+    type: "ADD",
+    items
+  };
+}
+
+export function removeFromCart(items) {
+  return {
+    type: "REMOVE",
+    items
+  };
+}

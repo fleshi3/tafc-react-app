@@ -9,6 +9,7 @@ import Banner from "./components/Banner";
 import "./scss/App.scss";
 import Footer from "./components/Footer";
 import Copyright from "./components/Copyright";
+import CartContainer from "./components/Cart/CartContainer";
 
 export const App = () => ({
   render() {
@@ -22,6 +23,7 @@ export const App = () => ({
             <Route exact path="/" component={MenuList} />
             <Route exact path="/about" component={About} />
           </Switch>
+          <CartContainer />
           <Footer />
           <Copyright />
         </div>

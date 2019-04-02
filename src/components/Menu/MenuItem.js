@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { createSelector } from "reselect";
 import "../../scss/App.scss";
+import { addToCart } from "../../actions/index";
 
 const sortedItems = (items, filter) => {
   switch (filter) {
@@ -19,8 +21,25 @@ const sortedItems = (items, filter) => {
   }
 };
 
+const getItemsSelector = state => {
+  return state.cartReducer.items.ids.map(
+    id => state.cartReducer.items.byId[id]
+  );
+};
+
 const mapStateToProps = state => {
-  return { items: sortedItems(state.cartReducer.items, state.sortReducer) };
+  //  return {
+  //    items: state.cartReducer.items.ids
+  //  };
+  return {
+    items: getItemsSelector(state)
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: items => dispatch(addToCart(items))
+  };
 };
 
 const flavours = [
@@ -40,23 +59,23 @@ function searchingFor(search) {
 class MenuItem extends Component {
   menuItem = items => {
     const { title, price, image, id, select, key } = items;
-    const codex = title.toLowerCase();
-    const itemContainer = `itemContainer + ${codex}`;
-    const optionItems = flavours.map(function gish(x) {
-      if (items.flavour === true) {
-        return (
-          <option key={x} value={x}>
-            {x}
-          </option>
-        );
-      }
-      return <option key={x}>{items.special}</option>;
-    });
-
+    //const codex = title.toLowerCase();
+    //const itemContainer = `itemContainer + ${codex}`;
+    //    const optionItems = flavours.map(function gish(x) {
+    //      if (items.flavour === true) {
+    //return (
+    // <option key={x} value={x}>
+    // {x}
+    //  </option>
+    //);
+    //}
+    //return <option key={x}>{items.special}</option>;
+    // });
+    const { addToCart } = this.props;
     return (
-      <div className={itemContainer} key={key}>
+      <div className="itemContainer" key={key}>
         <div className="overlay">
-          <div className="previewContainer" key={items.key}>
+          <div className="previewContainer" key={id}>
             <img src={image} alt="" />
           </div>
         </div>
@@ -64,10 +83,13 @@ class MenuItem extends Component {
           <h3>{title}</h3>
         </div>
         <div className="optionContainer" key={id}>
-          <select key={id}>{optionItems}</select>
+          <select key={id} />
         </div>
         <div className="descriptionContainer">
           $<span>{price}</span>
+        </div>
+        <div>
+          <button onClick={() => addToCart(items)}>+</button>
         </div>
       </div>
     );
@@ -76,7 +98,8 @@ class MenuItem extends Component {
   render() {
     const { items } = this.props;
     const { searchMe } = this.props;
-    const menuItems = items.filter(searchingFor(searchMe)).map(this.menuItem);
+    //const menuItems = items.menu.byId.filter(searchingFor(searchMe)).map(this.menuItem);
+    const menuItems = items.map(this.menuItem);
     return <div className="menuContainer">{menuItems}</div>;
   }
 }
@@ -91,4 +114,7 @@ MenuItem.defaultProps = {
   items: []
 };
 
-export default connect(mapStateToProps)(MenuItem);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MenuItem);
