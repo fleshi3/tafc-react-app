@@ -522,11 +522,52 @@ body {
 }
 
 .cartContainer {
-  background: orange;
-  color: black;
-  position: relative;
-  z-index: 999;
-  margin-bottom: 100vh;
+  background: rgba(#121212, 0.95);
+  color: orange;
+  position: fixed;
+  z-index: 9999;
+  height: 100%;
+  top: 0;
+  right:0;
+  left: 50%;
+  border-left: orange 3px solid;
+  padding: 2rem;
+  transform: translate3d(50%,0,0);
+  @include easeOut;
+  .cartItemContainer {
+          margin-top: 2rem;
+          .cartListItem {
+                  background: rgba(black, 0.4);
+                  padding: 1rem;
+                  margin-bottom: 10px;
+                  border: orange 1px solid;
+                  border-top-left-radius: 5px;
+                  border-bottom-left-radius: 5px;
+          }
+  }
+}
+
+.showCart {
+        position: fixed;
+        z-index: 9999;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+        button {
+                background: #121212;
+                border: orange 2px solid;
+                box-shadow: 0 0 5px orange;
+                padding: 1rem;
+                color: lighten(orange, 10);
+                text-shadow: 0 0 5px orange;
+                cursor: pointer;
+        }
+}
+
+.cartTotal {
+        padding: 2rem 0;
+        font-size: 24px;
 }
 
 @import "mobile";

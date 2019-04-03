@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { createSelector } from "reselect";
 import "../../scss/App.scss";
 import { addToCart } from "../../actions/index";
+import { getVisibleProducts } from "../../reducers/productReducer";
 
 const sortedItems = (items, filter) => {
   switch (filter) {
@@ -21,16 +22,19 @@ const sortedItems = (items, filter) => {
   }
 };
 
+// const getItemsSelector = state => {
+//  return state.cartReducer.items.ids.map(
+//    id => state.cartReducer.items.byId[id]
+//  );
+// };
+
 const getItemsSelector = state => {
-  return state.cartReducer.items.ids.map(
-    id => state.cartReducer.items.byId[id]
+  return state.productReducer.visibleIds.map(
+    id => state.productReducer.byId[id]
   );
 };
 
 const mapStateToProps = state => {
-  //  return {
-  //    items: state.cartReducer.items.ids
-  //  };
   return {
     items: getItemsSelector(state)
   };

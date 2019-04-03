@@ -44,7 +44,7 @@ const data = {
       quantity: 0
     }
   },
-  ids: [1, 2, 3, 4, 5, 6, 7]
+  visibleIds: [1, 2, 3, 4, 5, 6, 7]
 };
 
 export default data;
