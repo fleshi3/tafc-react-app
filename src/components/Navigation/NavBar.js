@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logoSVG from "./logo";
+import logoSVG from "../Features/logo";
 
 function NavBar() {
   return (
@@ -8,20 +8,24 @@ function NavBar() {
       <ul className="navList">
         <li>
           <NavLink exact to="/" activeClassName="NavLinkActive">
-            Home
+            <span className="PacificoPlain">Home</span>
           </NavLink>
         </li>
         <li>
           <NavLink exact to="/about" activeClassName="NavLinkActive">
-            About
+            <span className="PacificoPlain">About</span>
           </NavLink>
         </li>
         <div className="roundCut">{logoSVG()}</div>
         <li>
-          <a href="/">Order</a>
+          <NavLink exact to="/catering" activeClassName="NavLinkActive">
+            <span className="PacificoPlain">Catering</span>
+          </NavLink>
         </li>
         <li>
-          <a href="/">Catering</a>
+          <NavLink exact to="/order" activeClassName="NavLinkActive">
+            <span className="PacificoPlain">Cart</span>
+          </NavLink>
         </li>
       </ul>
     </div>

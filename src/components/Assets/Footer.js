@@ -11,7 +11,7 @@ import {
   faInstagram,
   faTwitter
 } from "@fortawesome/free-brands-svg-icons";
-import MyMapComponent from "./Features/GoogleMaps";
+import MyMapComponent from "../Features/GoogleMaps";
 
 function Footer() {
   return (

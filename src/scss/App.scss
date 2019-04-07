@@ -115,7 +115,7 @@ body {
       list-style: none;
       text-decoration: none;
       padding: 5px 5px;
-      line-height: 4;
+      line-height: 2.5;
       height: 1rem;
       position: relative;
       box-sizing: border-box;
@@ -158,7 +158,7 @@ body {
   background-size: cover;
   background-position: center center;
   width: 100%;
-  padding: 6rem 10rem;
+  padding: 6rem;
   z-index: 999;
   position: relative;
   border-top: orange 3px solid;
@@ -339,9 +339,22 @@ body {
       border-bottom-right-radius: 5px;
       text-align: center;
       font-size: 16px;
-      padding: 5px 0;
       color: orange;
       text-shadow: 0 0 5px lighten(orange, 10);
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      .addToCart {
+              box-sizing: border-box;
+              position: relative;
+              height: 30px;
+              margin-left: auto;
+      }
+      .itemPrice {
+              text-align: center;
+              line-height: 30px;
+              position: absolute;
+      }
     }
   }
 }
@@ -467,12 +480,13 @@ body {
       padding: 4rem;
       box-sizing: border-box;
       .storyImage {
-        width: 25%;
+        width: 30%;
         float: left;
         background: #282828;
         padding: 10px;
         border: orange 1px solid;
         box-shadow: 0 0 5px orange;
+        box-sizing: border-box;
         color: grey;
         img {
           width: 100%;
@@ -481,8 +495,9 @@ body {
       }
       .storyText {
         float: right;
-        width: 70%;
+        width: 65%;
         padding: 5px;
+        box-sizing: border-box;
         p {
           line-height: 2rem;
           margin-top: 10px;
@@ -512,6 +527,11 @@ body {
   font-family: "Pacifico", cursive;
   color: lighten(orange, 15);
   text-shadow: 0 0 5px orange;
+  font-size: 28px;
+}
+
+.PacificoPlain {
+  font-family: "Pacifico", cursive;
   font-size: 28px;
 }
 

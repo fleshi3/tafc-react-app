@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // Components
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
-import MenuList from "./components/MenuList";
+import Header from "./components/Assets/Header";
+import NavBar from "./components/Navigation/NavBar";
+import MenuList from "./containers/MenuList";
 import About from "./containers/About";
-import Banner from "./components/Banner";
+import Banner from "./components/Assets/Banner";
 import "./scss/App.scss";
-import Footer from "./components/Footer";
-import Copyright from "./components/Copyright";
+import Footer from "./components/Assets/Footer";
+import Copyright from "./components/Assets/Copyright";
 import CartContainer from "./components/Cart/CartContainer";
 
 export const App = () => ({
