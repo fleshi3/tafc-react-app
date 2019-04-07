@@ -4,44 +4,50 @@ const data = {
       id: "menu1",
       title: "Breast Fillets (3pc)",
       image: "/img/menu/breastfillet.jpg",
-      price: 12.99
+      price: 12.99,
+      options: true
     },
     2: {
       id: "menu2",
       title: "Thigh Fillets (3pc)",
       image: "/img/menu/thighfillet.jpg",
-      price: 12.99
+      price: 12.99,
+      options: true
     },
     3: {
       id: "menu3",
       title: "Chicken Poppers",
       image: "/img/menu/poppers.jpg",
-      price: 8.5
+      price: 8.5,
+      options: true
     },
     4: {
       id: "menu4",
       title: "Chicken Wings",
       image: "/img/menu/honeysoy.jpg",
-      price: 11.99
+      price: 11.99,
+      options: false
     },
     5: {
       id: "menu5",
       title: "TAFC Fries",
       image: "./img/menu/fries.jpg",
-      price: 7
+      price: 7,
+      options: false
     },
     6: {
       id: "menu6",
       title: "TAFC Potato Gems",
       image: "./img/menu/gems.jpg",
-      price: 6.5
+      price: 6.5,
+      options: false
     },
     7: {
       id: "menu7",
       title: "TAFC Vietnamese Slaw",
       image: "./img/menu/slaw.jpg",
       price: 6,
-      quantity: 0
+      options: false
     }
   },
   visibleIds: [1, 2, 3, 4, 5, 6, 7]

@@ -5,13 +5,6 @@ const initState = {
   products: data
 };
 
-const products = (state, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
 const byId = (state = initState.products.byId, action) => {
   switch (action.type) {
     default:

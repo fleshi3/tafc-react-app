@@ -6,7 +6,7 @@ import SortLink from "../components/Menu/SortLink";
 import { SortFilters } from "../actions";
 
 const MapStateToProps = state => {
-  return { items: state.productReducer.items };
+  return { items: state.productReducer.byId };
 };
 
 class MenuList extends Component {
@@ -18,33 +18,6 @@ class MenuList extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // Sort Reset (uses default id order)
-  sortInitial = () => {
-    const { items } = this.state;
-    const sortReset = items.sort(function sortFood(a, b) {
-      return a.id - b.id;
-    });
-    this.setState({ items: sortReset });
-  };
-
-  // Sort Descending
-  sortPriceDown = () => {
-    const { items } = this.state;
-    const sortPriceDown = items.sort(function sortFood(a, b) {
-      return b.price - a.price;
-    });
-    this.setState({ items: sortPriceDown });
-  };
-
-  // Sort Ascending
-  sortPriceUp = () => {
-    const { items } = this.state;
-    const sortPriceUp = items.sort(function sortFood(a, b) {
-      return a.price - b.price;
-    });
-    this.setState({ items: sortPriceUp });
-  };
-
   // Update empty state.search
   handleChange = e => {
     this.setState({ search: e.target.value });
@@ -55,8 +28,9 @@ class MenuList extends Component {
     return (
       <div className="menuList">
         <MenuTitle title="Our Menu" />
+        <SortLink filter={SortFilters.SORT_INITIAL}>ID</SortLink>
         <SortLink filter={SortFilters.SORT_DESCENDING}>DOWN</SortLink>
-        {/* <MenuSorted handleChange={this.handleChange} search={search} /> */}
+        <SortLink filter={SortFilters.SORT_ASCENDING}>UP</SortLink>
         <MenuItem searchMe={search} />
       </div>
     );

@@ -1,31 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import "../../scss/App.scss";
 import { addToCart } from "../../actions/index";
 
-const sortedItems = (items, filter) => {
-  switch (filter) {
-    case "SORT_DESCENDING":
-      return items.slice().sort(function(a, b) {
-        return b.price - a.price;
-      });
-    case "SORT_ASCENDING":
-      return items.slice().sort(function(a, b) {
-        return a.price - b.price;
-      });
-    case "SORT_INITIAL":
-    default:
-      return items;
-  }
-};
-
-// const getItemsSelector = state => {
-//  return state.cartReducer.items.ids.map(
-//    id => state.cartReducer.items.byId[id]
-//  );
-// };
-
+// *COULD POSSIBLY BE INTEGRATED INTO REDUCER*
 const getItemsSelector = state => {
   return state.productReducer.visibleIds.map(
     id => state.productReducer.byId[id]
@@ -34,7 +12,8 @@ const getItemsSelector = state => {
 
 const mapStateToProps = state => {
   return {
-    items: getItemsSelector(state)
+    items: getItemsSelector(state),
+    filter: state.sortReducer
   };
 };
 
@@ -52,40 +31,65 @@ const flavours = [
   "Mexican Coating"
 ];
 
+// *MOVE TO MENULIST*
 function searchingFor(search) {
   return function fix(x) {
     return x.title.toLowerCase().includes(search.toLowerCase()) || !search;
   };
 }
 
+// SORT FILTER (DOES NOT MODIFY STATE)
+const sortFilter = filter => {
+  switch (filter) {
+    case "SORT_DESCENDING":
+      return function(a, b) {
+        return b.price - a.price;
+      };
+    case "SORT_ASCENDING":
+      return function(a, b) {
+        return a.price - b.price;
+      };
+    case "SORT_INITIAL":
+    default:
+      return function(a, b) {
+        return a.id - b.id;
+      };
+  }
+};
+
 class MenuItem extends Component {
   menuItem = items => {
-    const { title, price, image, id, select, key } = items;
+    // destructuring
+    const { title, price, image, id } = items;
+    const { addToCart } = this.props;
+
+    // sanitizing classname extensions for search filter
     const codex = title.toLowerCase();
     const itemContainer = `itemContainer + ${codex}`;
-    const optionItems = flavours.map(function gish(x) {
-      //if (items.flavour === true) {
-      //return (
-      // <option key={x} value={x}>
-      //  {x}
-      //  </option>
-      //);
-      //}
-      return <option key={x}>{x}</option>;
-    });
-    const { addToCart } = this.props;
+
+    // mapping flavor array
+    const options = () => {
+      if (items.options === true) {
+        return flavours.map(function(x) {
+          return <option>{x}</option>;
+        });
+      }
+      return <option>n/a</option>;
+    };
+
+    // menu item mapping template
     return (
-      <div className={itemContainer} key={key}>
+      <div className={itemContainer} key={id}>
         <div className="overlay">
-          <div className="previewContainer" key={id}>
+          <div className="previewContainer">
             <img src={image} alt="" />
           </div>
         </div>
         <div className="titleContainer">
           <h3>{title}</h3>
         </div>
-        <div className="optionContainer" key={id}>
-          <select key={id}>{optionItems}</select>
+        <div className="optionContainer">
+          <select key={id}>{options(items)}</select>
         </div>
         <div className="descriptionContainer">
           <span className="itemPrice">${price}</span>
@@ -102,21 +106,25 @@ class MenuItem extends Component {
   };
 
   render() {
-    const { items } = this.props;
-    const { searchMe } = this.props;
-    const menuItems = items.filter(searchingFor(searchMe)).map(this.menuItem);
+    const { items, filter } = this.props;
+    const menuItems = items
+      .slice()
+      .sort(sortFilter(filter))
+      .map(this.menuItem);
     return <div className="menuContainer">{menuItems}</div>;
   }
 }
 
 MenuItem.propTypes = {
-  searchMe: PropTypes.string,
-  items: PropTypes.arrayOf
+  items: PropTypes.arrayOf,
+  filter: PropTypes.string,
+  addToCart: PropTypes.func
 };
 
 MenuItem.defaultProps = {
-  searchMe: "",
-  items: []
+  items: [],
+  filter: "",
+  addToCart: null
 };
 
 export default connect(
