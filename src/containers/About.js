@@ -1,6 +1,5 @@
 import React from "react";
-import "../scss/App.scss";
-import MenuTitle from "./Menu/MenuTitle";
+import MenuTitle from "../components/Menu/MenuTitle";
 
 const About = () => {
   return (

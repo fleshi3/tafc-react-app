@@ -65,8 +65,6 @@ export const getAddedItems = state => state.addedItems;
 const totalCost = (state = initState, action) => {
   switch (action.type) {
     case "ADD":
-      const increment =
-        action.items.price * state.addedItemsById[action.items.id];
       return state.totalCost + action.items.price;
     default:
       return state.totalCost;

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import MenuList from "./components/MenuList";
-import About from "./components/About";
+import About from "./containers/About";
 import Banner from "./components/Banner";
 import "./scss/App.scss";
 import Footer from "./components/Footer";

@@ -49,7 +49,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2rem;
+  height: 0rem;
   padding: 5px;
   padding-left: 15px;
   line-height: 2rem;
@@ -59,7 +59,7 @@ body {
 .navBar {
   background: #121212;
   color: white;
-  height: 6vh;
+  height: 3rem;
   padding: 1.5rem 0;
   border-bottom: orange 3px solid;
   box-shadow: 0 0 20px orange;
@@ -84,7 +84,7 @@ body {
     .roundCut {
       background: #121212;
       position: relative;
-      top: 81px;
+      top: 4.5rem;
       z-index: 999;
       width: 250px;
       height: 125px;
@@ -101,9 +101,8 @@ body {
     }
     svg {
       transform: translate3d(0, -50%, 0);
-      height: 200%;
       width: 100%;
-      padding: 10% 0;
+      height: 200%;
       filter: drop-shadow(0 0 5px orange);
       @include easeOut;
       animation: omega-pulse 2s infinite;
@@ -159,7 +158,7 @@ body {
   background-size: cover;
   background-position: center center;
   width: 100%;
-  padding: 10rem;
+  padding: 6rem 10rem;
   z-index: 999;
   position: relative;
   border-top: orange 3px solid;
