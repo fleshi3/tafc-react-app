@@ -1,5 +1,4 @@
 // import foodItems from "./items";
-
 import data from "./data";
 
 const items = data;
