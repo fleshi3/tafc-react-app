@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // Components
-import Header from "./components/Assets/Header";
 import NavBar from "./components/Navigation/NavBar";
 import MenuList from "./containers/MenuList";
 import About from "./containers/About";
@@ -16,7 +15,6 @@ export const App = () => ({
     return (
       <BrowserRouter>
         <div className="App">
-          <Header />
           <NavBar />
           <Banner />
           <Switch>

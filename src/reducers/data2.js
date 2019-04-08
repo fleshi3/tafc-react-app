@@ -1,21 +1,18 @@
 const data = {
   byId: {
     1: {
-      id: "menu1",
+      id: "menu1og",
       title: "Breast Fillets (3pc)",
       image: "/img/menu/breastfillet.jpg",
       price: 12.99,
-      options: true,
-      flavor: "test",
-      key: 1
+      options: true
     },
     2: {
       id: "menu2",
       title: "Thigh Fillets (3pc)",
       image: "/img/menu/thighfillet.jpg",
       price: 12.99,
-      options: true,
-      key: 2
+      options: true
     },
     3: {
       id: "menu3",

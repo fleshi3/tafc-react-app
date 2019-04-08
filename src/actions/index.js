@@ -26,3 +26,11 @@ export function removeFromCart(items) {
     items
   };
 }
+
+export function setOption(items, e) {
+  return {
+    type: "SET_OPTION",
+    items,
+    option: e
+  };
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addToCart } from "../../actions/index";
+import { addToCart, setOption } from "../../actions/index";
 
 // *COULD POSSIBLY BE INTEGRATED INTO REDUCER*
 const getItemsSelector = state => {
@@ -19,7 +19,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: items => dispatch(addToCart(items))
+    addToCart: items => dispatch(addToCart(items)),
+    setOption: (items, e) => dispatch(setOption(items, e.target.value))
   };
 };
 
@@ -61,7 +62,7 @@ class MenuItem extends Component {
   menuItem = items => {
     // destructuring
     const { title, price, image, id } = items;
-    const { addToCart } = this.props;
+    const { addToCart, setOption } = this.props;
 
     // sanitizing classname extensions for search filter
     const codex = title.toLowerCase();
@@ -71,15 +72,23 @@ class MenuItem extends Component {
     const options = () => {
       if (items.options === true) {
         return flavours.map(function(x) {
-          return <option>{x}</option>;
+          return (
+            <option value={x} key={x}>
+              {x}
+            </option>
+          );
         });
       }
-      return <option>n/a</option>;
+      return (
+        <option value="n/a" key="n/a">
+          n/a
+        </option>
+      );
     };
 
     // menu item mapping template
     return (
-      <div className={itemContainer} key={id}>
+      <div className={itemContainer} >
         <div className="overlay">
           <div className="previewContainer">
             <img src={image} alt="" />
@@ -88,19 +97,24 @@ class MenuItem extends Component {
         <div className="titleContainer">
           <h3>{title}</h3>
         </div>
-        <div className="optionContainer">
-          <select key={id}>{options(items)}</select>
-        </div>
-        <div className="descriptionContainer">
-          <span className="itemPrice">${price}</span>
-          <button
-            type="button"
-            className="addToCart"
-            onClick={() => addToCart(items)}
-          >
-            +
-          </button>
-        </div>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            addToCart(items, e);
+          }}
+        >
+          <div className="optionContainer">
+            <select onChange={e => setOption(items, e)}>
+              {options(items)}
+            </select>
+          </div>
+          <div className="descriptionContainer">
+            <span className="itemPrice">${price}</span>
+            <button type="submit" className="addToCart">
+              +
+            </button>
+          </div>
+        </form>
       </div>
     );
   };

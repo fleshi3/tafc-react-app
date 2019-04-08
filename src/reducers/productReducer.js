@@ -7,6 +7,15 @@ const initState = {
 
 const byId = (state = initState.products.byId, action) => {
   switch (action.type) {
+    case "SET_OPTION":
+      return {
+        ...state,
+        [action.items.key]: {
+          ...state[action.items.key],
+          id: state[action.items.key].id + action.option,
+          flavor: action.option
+        }
+      };
     default:
       return state;
   }

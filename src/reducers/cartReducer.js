@@ -21,6 +21,7 @@ const addedItems = (state = initState.addedItems, action) => {
       //  action.items
       // ];
       if (state.indexOf(action.items) === -1) {
+              // return [...state, action.items];
         return [...state, action.items];
       }
       return [...state];
