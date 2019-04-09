@@ -1,13 +1,13 @@
 {
-  "main.css": "/tafc-react-app/static/css/main.af85668b.chunk.css",
-  "main.js": "/tafc-react-app/static/js/main.2c98c065.chunk.js",
-  "main.js.map": "/tafc-react-app/static/js/main.2c98c065.chunk.js.map",
+  "main.css": "/tafc-react-app/static/css/main.edc1de01.chunk.css",
+  "main.js": "/tafc-react-app/static/js/main.64ee9e2e.chunk.js",
+  "main.js.map": "/tafc-react-app/static/js/main.64ee9e2e.chunk.js.map",
   "runtime~main.js": "/tafc-react-app/static/js/runtime~main.0488088d.js",
   "runtime~main.js.map": "/tafc-react-app/static/js/runtime~main.0488088d.js.map",
   "static/js/2.b78095b9.chunk.js": "/tafc-react-app/static/js/2.b78095b9.chunk.js",
   "static/js/2.b78095b9.chunk.js.map": "/tafc-react-app/static/js/2.b78095b9.chunk.js.map",
   "index.html": "/tafc-react-app/index.html",
-  "precache-manifest.25a1185515b6240bed6b39cd70a0cc88.js": "/tafc-react-app/precache-manifest.25a1185515b6240bed6b39cd70a0cc88.js",
+  "precache-manifest.31c24c761971499bfc2f2b19ed9503be.js": "/tafc-react-app/precache-manifest.31c24c761971499bfc2f2b19ed9503be.js",
   "service-worker.js": "/tafc-react-app/service-worker.js",
-  "static/css/main.af85668b.chunk.css.map": "/tafc-react-app/static/css/main.af85668b.chunk.css.map"
+  "static/css/main.edc1de01.chunk.css.map": "/tafc-react-app/static/css/main.edc1de01.chunk.css.map"
 }
