@@ -145,7 +145,8 @@ body {
 
 //Menu Display
 .menuList,
-.About {
+.About,
+.Contact {
   //background: #9bc53d;
   background-image: 
     /* top, transparent red */ linear-gradient(
@@ -181,6 +182,17 @@ body {
       font-family: "Pacifico", cursive;
       font-size: 28px;
     }
+  }
+  button {
+    background: #121212;
+    color: white;
+    width: 25%;
+    height: 100%;
+    border: orange 1px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px orange;
+    font-size: 16px;
+    margin-right: 10px;
   }
 }
 
@@ -247,13 +259,20 @@ body {
     z-index: 9;
     //transform: translate3d(0, -26%, 0);
   }
+  .subscribe {
+    position: absolute;
+    z-index: 9999;
+    top: 32vh;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+  }
 }
 
 // container for menu item grid
 .menuContainer {
   background: transparent;
   width: 100%;
-  padding: 2rem;
   padding-top: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -346,22 +365,22 @@ body {
       flex-flow: row nowrap;
       justify-content: center;
       .addToCart {
-              box-sizing: border-box;
-              position: relative;
-              height: 30px;
-              width: 30px;
-              margin-left: auto;
-              background: #121212;
-              color: white;
-              border: none;
-              border-bottom-right-radius: 5px;
-              box-shadow: none;
-              cursor: pointer;
+        box-sizing: border-box;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        margin-left: auto;
+        background: #121212;
+        color: white;
+        border: none;
+        border-bottom-right-radius: 5px;
+        box-shadow: none;
+        cursor: pointer;
       }
       .itemPrice {
-              text-align: center;
-              line-height: 30px;
-              position: absolute;
+        text-align: center;
+        line-height: 30px;
+        position: absolute;
       }
     }
   }
@@ -471,6 +490,63 @@ body {
   box-shadow: 0 0 5px orange;
 }
 
+.Contact {
+  position: relative;
+  z-index: 999;
+  padding-bottom: 70vh;
+  .ContactInfo {
+    display: flex;
+    flex-flow: row nowrap;
+    background: rgba(black, 0.8);
+    border: orange 1px solid;
+    box-shadow: 0 0 5px orange;
+    box-sizing: border-box;
+    padding: 2rem;
+    .contactList {
+      li {
+        list-style: none;
+        padding: 0.5rem 0;
+      }
+    }
+    .contactLeft {
+      width: 100%;
+      padding-right: 2rem;
+    }
+  }
+  .ContactForm {
+    display: flex;
+    flex-flow: column nowrap;
+    background: rgba(black, 0.8);
+    border: orange 1px solid;
+    box-shadow: 0 0 5px orange;
+    color: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-sizing: border-box;
+    .names {
+      box-sizing: border-box;
+      input {
+        width: 300px;
+        box-sizing: border-box;
+        margin: 5px;
+      }
+    }
+    .information {
+      box-sizing: border-box;
+      input {
+        width: 300px;
+        box-sizing: border-box;
+        margin: 5px;
+      }
+    }
+    .message {
+      box-sizing: border-box;
+      margin: 5px;
+      padding: 5px;
+    }
+  }
+}
+
 .About {
   position: relative;
   z-index: 999;
@@ -555,46 +631,46 @@ body {
   z-index: 9999;
   height: 100%;
   top: 0;
-  right:0;
+  right: 0;
   left: 50%;
   border-left: orange 3px solid;
   padding: 2rem;
-  transform: translate3d(50%,0,0);
+  transform: translate3d(50%, 0, 0);
   @include easeOut;
   .cartItemContainer {
-          margin-top: 2rem;
-          .cartListItem {
-                  background: rgba(black, 0.4);
-                  padding: 1rem;
-                  margin-bottom: 10px;
-                  border: orange 1px solid;
-                  border-top-left-radius: 5px;
-                  border-bottom-left-radius: 5px;
-          }
+    margin-top: 2rem;
+    .cartListItem {
+      background: rgba(black, 0.4);
+      padding: 1rem;
+      margin-bottom: 10px;
+      border: orange 1px solid;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
   }
 }
 
 .showCart {
-        position: fixed;
-        z-index: 9999;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: right;
-        button {
-                background: #121212;
-                border: orange 2px solid;
-                box-shadow: 0 0 5px orange;
-                padding: 1rem;
-                color: lighten(orange, 10);
-                text-shadow: 0 0 5px orange;
-                cursor: pointer;
-        }
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  button {
+    background: #121212;
+    border: orange 2px solid;
+    box-shadow: 0 0 5px orange;
+    padding: 1rem;
+    color: lighten(orange, 10);
+    text-shadow: 0 0 5px orange;
+    cursor: pointer;
+  }
 }
 
 .cartTotal {
-        padding: 2rem 0;
-        font-size: 24px;
+  padding: 2rem 0;
+  font-size: 24px;
 }
 
 @import "mobile";

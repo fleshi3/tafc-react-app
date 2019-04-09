@@ -23,8 +23,8 @@ function NavBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/order" activeClassName="NavLinkActive">
-            <span className="PacificoPlain">Cart</span>
+          <NavLink exact to="/contact" activeClassName="NavLinkActive">
+            <span className="PacificoPlain">Contact</span>
           </NavLink>
         </li>
       </ul>

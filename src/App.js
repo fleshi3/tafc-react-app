@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navigation/NavBar";
 import MenuList from "./containers/MenuList";
 import About from "./containers/About";
+import Contact from "./containers/Contact";
 import Banner from "./components/Assets/Banner";
 import "./scss/App.scss";
 import Footer from "./components/Assets/Footer";
@@ -20,6 +21,7 @@ export const App = () => ({
           <Switch>
             <Route exact path="/" component={MenuList} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
           </Switch>
           <CartContainer />
           <Footer />

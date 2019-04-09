@@ -28,9 +28,14 @@ class MenuList extends Component {
     return (
       <div className="menuList">
         <MenuTitle title="Our Menu" />
-        <SortLink filter={SortFilters.SORT_INITIAL}>ID</SortLink>
-        <SortLink filter={SortFilters.SORT_DESCENDING}>DOWN</SortLink>
-        <SortLink filter={SortFilters.SORT_ASCENDING}>UP</SortLink>
+        <span className="Pacifico">Sort:</span>&emsp; &emsp;
+        <SortLink filter={SortFilters.SORT_INITIAL}>Product Index</SortLink>
+        <SortLink filter={SortFilters.SORT_DESCENDING}>
+          Price (High to Low)
+        </SortLink>
+        <SortLink filter={SortFilters.SORT_ASCENDING}>
+          Price (Low to High)
+        </SortLink>
         <MenuItem searchMe={search} />
       </div>
     );
