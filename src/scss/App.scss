@@ -317,15 +317,16 @@ body {
         width: 80%;
         color: white;
         text-align: center;
+        text-align-last: center;
         font-size: 1rem;
         -moz-appearance: none;
         -webkit-appearance: none;
+        @include easeOut;
         &:hover {
-          box-shadow: 0 0 6px rgba(orange, 0.5);
-          @include easeOut;
+          box-shadow: 0 0 10px rgba(orange, 0.5);
         }
         &:after {
-          content: "asdsad";
+          content: "";
           position: absolute;
           top: 0;
           right: 12px;
@@ -348,7 +349,14 @@ body {
               box-sizing: border-box;
               position: relative;
               height: 30px;
+              width: 30px;
               margin-left: auto;
+              background: #121212;
+              color: white;
+              border: none;
+              border-bottom-right-radius: 5px;
+              box-shadow: none;
+              cursor: pointer;
       }
       .itemPrice {
               text-align: center;

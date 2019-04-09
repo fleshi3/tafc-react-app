@@ -42,6 +42,7 @@ class CartContainer extends Component {
           quantity={addedItemsById[item.id]}
           subtotal={item.price * addedItemsById[item.id]}
           key={item.id}
+          flavor={item.flavor}
         />
       ))
     );
