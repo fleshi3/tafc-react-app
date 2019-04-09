@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3a499d69d99e459a0935",
+    "revision": "a1328564b94c06369f48",
     "url": "/tafc-react-app/static/css/main.af85668b.chunk.css"
   },
   {
-    "revision": "3a499d69d99e459a0935",
-    "url": "/tafc-react-app/static/js/main.52e1ce21.chunk.js"
+    "revision": "a1328564b94c06369f48",
+    "url": "/tafc-react-app/static/js/main.2c98c065.chunk.js"
   },
   {
     "revision": "b33a882c635f6d0d8d5c",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/tafc-react-app/static/js/2.b78095b9.chunk.js"
   },
   {
-    "revision": "c3df1e52d2868335541d44cd7b603d6e",
+    "revision": "972fef508a62e5336bc376b8124e98cd",
     "url": "/tafc-react-app/index.html"
   }
 ];
