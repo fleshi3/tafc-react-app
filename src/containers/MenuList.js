@@ -4,6 +4,8 @@ import MenuItem from "../components/Menu/MenuItem";
 import MenuTitle from "../components/Menu/MenuTitle";
 import SortLink from "../components/Menu/SortLink";
 import { SortFilters } from "../actions";
+import Footer from "../components/Assets/Footer";
+import Copyright from "../components/Assets/Copyright";
 
 const MapStateToProps = state => {
   return { items: state.productReducer.byId };
@@ -37,6 +39,8 @@ class MenuList extends Component {
           Price (Low to High)
         </SortLink>
         <MenuItem searchMe={search} />
+        <Footer />
+        <Copyright />
       </div>
     );
   }

@@ -3,7 +3,7 @@ const data = {
     1: {
       id: "menu1",
       title: "Breast Fillets (3pc)",
-      image: "/img/menu/breastfillet.jpg",
+      image: "./img/menu/breastfillet.jpg",
       price: 12.99,
       options: true,
       flavor: "Original",
@@ -12,7 +12,7 @@ const data = {
     2: {
       id: "menu2",
       title: "Thigh Fillets (3pc)",
-      image: "/img/menu/thighfillet.jpg",
+      image: "./img/menu/thighfillet.jpg",
       price: 12.99,
       options: true,
       flavor: "Original",
@@ -21,7 +21,7 @@ const data = {
     3: {
       id: "menu3",
       title: "Chicken Poppers",
-      image: "/img/menu/poppers.jpg",
+      image: "./img/menu/poppers.jpg",
       price: 8.5,
       options: true,
       flavor: "Original",
@@ -30,7 +30,7 @@ const data = {
     4: {
       id: "menu4",
       title: "Chicken Wings",
-      image: "/img/menu/honeysoy.jpg",
+      image: "./img/menu/honeysoy.jpg",
       price: 11.99,
       options: false,
       key: 4

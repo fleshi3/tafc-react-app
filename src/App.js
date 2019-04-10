@@ -1,35 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // Components
-import NavBar from "./components/Navigation/NavBar";
+import Home from "./containers/Home";
 import MenuList from "./containers/MenuList";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
-import Banner from "./components/Assets/Banner";
 import "./scss/App.scss";
-import Footer from "./components/Assets/Footer";
-import Copyright from "./components/Assets/Copyright";
 import CartContainer from "./components/Cart/CartContainer";
 
-export const App = () => ({
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+
+  handleClick = () => {
+    window.scrollTo(0, 990);
+  };
+
   render() {
+    const { handleClick } = this;
     return (
       <BrowserRouter>
         <div className="App">
-          <NavBar />
-          <Banner />
-          <Switch>
+          <Home handleClick={handleClick} />
+          <Switch ref={this.myRef}>
             <Route exact path="/" component={MenuList} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
           </Switch>
           <CartContainer />
-          <Footer />
-          <Copyright />
         </div>
       </BrowserRouter>
     );
   }
-});
+}
 
 export default App;

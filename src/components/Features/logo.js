@@ -14,7 +14,7 @@ const logoSVG = () => (
       transform="translate(0.000000,236.000000) scale(0.100000,-0.100000)"
       fill="none"
       stroke="orange"
-      strokeWidth="20px"
+      strokeWidth="12px"
     >
       <path
         d="M1435 2309 c-32 -15 -59 -18 -131 -16 l-90 2 -62 -42 c-49 -32 -79

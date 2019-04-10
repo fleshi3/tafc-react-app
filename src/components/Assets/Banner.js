@@ -3,7 +3,7 @@ import React from "react";
 function Banner() {
   return (
     <div className="mainBanner">
-      <img src="/img/header.png" alt="" />
+      <img src="./img/header.png" alt="" />
     </div>
   );
 }

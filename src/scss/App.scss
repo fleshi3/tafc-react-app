@@ -1,4 +1,9 @@
 @import "config";
+$Lora: "'Lora', serif'";
+
+html {
+        scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -15,12 +20,15 @@
 }
 
 .App {
+  min-height: 100vh;
+  width: 100%;
   height: 100%;
-  min-height: 100%;
   position: relative;
-  overflow: hidden;
   div {
     width: 100%;
+  }
+  a, a:active, a:focus {
+          outline: none;
   }
 }
 
@@ -36,9 +44,6 @@
   }
 }
 
-body {
-  height: 100%;
-}
 
 //User Header
 .userHeader {
@@ -147,13 +152,13 @@ body {
 .menuList,
 .About,
 .Contact {
-  //background: #9bc53d;
+  background: #121212;
   background-image: 
     /* top, transparent red */ linear-gradient(
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.8)
     ),
-    /* your image */ url("/img/bg.jpeg");
+    /* your image */ url(/img/bg.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -162,6 +167,8 @@ body {
   padding: 10rem 6rem;
   z-index: 999;
   position: relative;
+  min-height: 100vh;
+  top: 100vh;
   border-top: orange 3px solid;
   box-sizing: border-box;
   .menuTitle {
@@ -608,7 +615,8 @@ body {
 }
 
 .Pacifico {
-  font-family: "Pacifico", cursive;
+  //font-family: "Pacifico", cursive;
+  font-family: 'Lora', serif;
   color: lighten(orange, 15);
   text-shadow: 0 0 5px orange;
   font-size: 28px;
@@ -617,11 +625,6 @@ body {
 .PacificoPlain {
   font-family: "Pacifico", cursive;
   font-size: 28px;
-}
-
-.NavLinkActive {
-  text-shadow: 0 0 5px orange;
-  color: orange;
 }
 
 .cartContainer {
@@ -671,6 +674,151 @@ body {
 .cartTotal {
   padding: 2rem 0;
   font-size: 24px;
+}
+
+//Home
+.Home {
+  background: black;
+  position: fixed;
+  height: 100vh;
+  background-image: 
+    /* bottom, transparent red */ linear-gradient(
+      rgba(0, 0, 0, 0.99),
+      rgba(0, 0, 0, 0.9)
+    ),
+    /* your image */ url(/img/bg2.jpeg);
+}
+
+//Navigation Bar
+.homeBar {
+  color: #ebdbb2;
+  height: 3rem;
+  padding: 1.5rem 0;
+  justify-content: center;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 999;
+  a {
+    color: #ebdbb2;
+    text-decoration: none;
+  }
+  // list formatting
+  .homeList {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    font-size: "Lora", serif;
+    box-sizing: border-box;
+    .homeLink {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            letter-spacing: 3px;
+    }
+    .NavLinkActive {
+      text-shadow: 0 0 5px orange;
+      color: orange;
+      text-decoration: underline;
+    }
+    li {
+      list-style: none;
+      text-decoration: none;
+      padding: 5px 5px;
+      line-height: 2.5;
+      height: 1rem;
+      position: relative;
+      box-sizing: border-box;
+      @include easeOut;
+      &:nth-child(1) {
+        padding-right: 4rem;
+      }
+      &:nth-child(2) {
+        padding-right: 4rem;
+      }
+      &:nth-child(4) {
+        padding-left: 4rem;
+      }
+      &:nth-child(5) {
+        padding-left: 4rem;
+      }
+      a {
+        @include easeOut;
+        &:hover {
+          color: orange;
+          text-shadow: 0 0 5px orange;
+        }
+      }
+    }
+  }
+}
+
+.homeBanner {
+  display: flex;
+  flex-flow: row nowrap;
+  position: absolute;
+  top: 25%;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+  .textContainer {
+    color: white;
+    height: 100%;
+    text-align: left;
+    .bigText {
+      position: relative;
+      top: 5%;
+      font-family: "Lora", serif;
+      font-size: 6rem;
+      color: #ebdbb2;
+    }
+    .smallText {
+      position: relative;
+      top: 5%;
+      font-family: "Lora", serif;
+      font-size: 18px;
+      color: #ebdbb2;
+      letter-spacing: 3px;
+      .highlight {
+        color: orange;
+        text-shadow: 0 0 5px orange;
+      }
+    }
+  }
+  .logoContainer {
+    text-align: right;
+    svg {
+      height: 250px;
+      filter: drop-shadow(0 0 5px orange);
+      @include easeOut;
+      animation: omega-pulse 2s infinite;
+    }
+  }
+  .underline {
+          border-bottom: #ebdbb2 1px solid;
+          position: relative;
+          top: 6%;
+  }
+  .scrollButton {
+          position: relative;
+          top: 9%;
+          button {
+                  border: #ebdbb2 1px solid;
+                  background: transparent;
+                  color: #ebdbb2;
+                  font-family: 'Lora', serif;
+                  width: 175px;
+                  padding: 0.5rem;
+                  a, a:active, a:focus {
+                          outline: 0;
+                  }
+          }
+          button::-moz-focus-inner {
+                  border: 0;
+          }
+  }
 }
 
 @import "mobile";

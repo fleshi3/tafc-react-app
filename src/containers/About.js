@@ -8,7 +8,7 @@ const About = () => {
       <div className="Story" style={{ color: "white" }}>
         <div className="Segment">
           <div className="storyImage">
-            <img src="/img/menu/breastfillet.jpg" alt="" />
+            <img src="./img/menu/breastfillet.jpg" alt="" />
             <small>Insert Caption Here</small>
           </div>
           <div className="storyText">
@@ -35,7 +35,7 @@ const About = () => {
         <br />
         <div className="Segment">
           <div className="storyImage">
-            <img src="/img/truck.jpg" alt="" />
+            <img src="./img/truck.jpg" alt="" />
             <small>Inser Caption Here</small>
           </div>
           <div className="storyText">
@@ -61,7 +61,7 @@ const About = () => {
         </div>
         <div className="Segment">
           <div className="storyImage">
-            <img src="/img/store.jpg" alt="" />
+            <img src="./img/store.jpg" alt="" />
             <small>Insert Caption Here</small>
           </div>
           <div className="storyText">

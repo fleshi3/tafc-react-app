@@ -18,7 +18,7 @@ function NavBar() {
         </li>
         <div className="roundCut">{logoSVG()}</div>
         <li>
-          <NavLink exact to="/catering" activeClassName="NavLinkActive">
+          <NavLink exact to="/contact" activeClassName="NavLinkActive">
             <span className="PacificoPlain">Catering</span>
           </NavLink>
         </li>
