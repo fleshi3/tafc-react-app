@@ -4,7 +4,7 @@ import MenuTitle from "../components/Menu/MenuTitle";
 const About = () => {
   return (
     <div className="About">
-      <MenuTitle title="Our Story" />
+      <MenuTitle title="STORY" />
       <div className="Story" style={{ color: "white" }}>
         <div className="Segment">
           <div className="storyImage">

@@ -29,12 +29,7 @@ function HomeBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            exact
-            to="/contact"
-            activeClassName="NavLinkActive"
-            onClick={scrollTo}
-          >
+          <NavLink exact to="/contact" activeClassName="NavLinkActive">
             <span className="homeLink">CATERING</span>
           </NavLink>
         </li>

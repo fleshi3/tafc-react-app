@@ -62,7 +62,7 @@ class CartContainer extends Component {
         </div>
         <div className="showCart">
           <button type="button" onClick={this.handleClick}>
-            CART {total}
+                  review cart [{total}]
           </button>
         </div>
       </div>

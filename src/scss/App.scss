@@ -1,6 +1,12 @@
 @import "config";
 $Lora: "'Lora', serif'";
 
+.switch-wrapper {
+}
+
+.switch-wrapper > div {
+}
+
 html {
         scroll-behavior: smooth;
 }
@@ -8,7 +14,7 @@ html {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Lora", serif;
 }
 
 @mixin easeOut {
@@ -152,11 +158,12 @@ html {
 .menuList,
 .About,
 .Contact {
-  background: #121212;
+  background: darken(#ebdbb2, 5);
+  @include easeOut;
   background-image: 
     /* top, transparent red */ linear-gradient(
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.8)
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
     ),
     /* your image */ url(/img/bg.jpeg);
   background-repeat: no-repeat;
@@ -167,38 +174,43 @@ html {
   padding: 10rem 6rem;
   z-index: 999;
   position: relative;
-  min-height: 100vh;
   top: 100vh;
-  border-top: orange 3px solid;
+  border-top: #ebdbb2 3px solid;
   box-sizing: border-box;
   .menuTitle {
-    background: #121212;
+    background: rgba(black, 0.85);
     position: absolute;
+    z-index: 9999;
     height: 5rem;
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: orange 3px solid;
+    border-bottom: #ebdbb2 3px solid;
     padding: 0 5rem;
-    color: lighten(orange, 15);
-    text-shadow: 0 0 5px orange;
+    color: #ebdbb2;
+    text-shadow: 0 0 5px #ebdbb2;
     line-height: 5rem;
     box-sizing: border-box;
-    box-shadow: 0 0 15px orange;
+    box-shadow: 0 0 10px #ebdbb2;
+    &.sticky {
+            position: fixed;
+            top: 0;
+    }
     span {
-      font-family: "Pacifico", cursive;
+      font-family: 'Lora', serif;
       font-size: 28px;
+      letter-spacing: 5px;
     }
   }
   button {
-    background: #121212;
-    color: white;
-    width: 25%;
+    background: rgba(black, 0.4);
+    color: #ebdbb2;
+    width: 26%;
+    padding: 0.5rem;
     height: 100%;
-    border: orange 1px solid;
-    border-radius: 5px;
-    box-shadow: 0 0 5px orange;
-    font-size: 16px;
+    border: #ebdbb2 1px solid;
+    font-family: 'Lora', serif;
+    font-size: 14px;
     margin-right: 10px;
   }
 }
@@ -290,35 +302,43 @@ html {
   margin-bottom: 50vh;
   // container for individual menu items
   .itemContainer {
-    border-radius: 5px;
+    //border-radius: 5px;
     width: auto;
-    background: lighten(#121212, 4);
+    background: #1d2021;
     color: white;
-    border: orange 1px solid;
-    box-shadow: 0 0 6px lighten(orange, 10);
+    border: #ebdbb2 1px solid;
     .titleContainer {
       //container for item title
+      background: #121212;
+      box-sizing: border-box;
       text-align: center;
-      font-size: 14px;
-      color: white;
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      color: #ebdbb2;
+      border-bottom: #fe8019 1px solid;
       text-decoration: none;
       padding: 5px;
+      h3 {
+              font-family: 'Lora', serif;
+      }
     }
     .previewContainer {
       display: block;
       margin: 0;
       padding: 0;
-      border: 0;
+      border: #121212 1px solid;
+      box-sizing: border-box;
+      box-shadow: 0 0 5px #121212;
       cursor: pointer;
       background-color: white;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      //border-top-left-radius: 5px;
+      //border-top-right-radius: 5px;
       //container for image previews
       img {
         width: 100%;
         display: block;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        //border-top-left-radius: 5px;
+        //border-top-right-radius: 5px;
       }
       &:hover {
         background-color: black;
@@ -333,60 +353,72 @@ html {
       justify-content: center;
       text-align: center;
       display: block;
-      padding: 5px 0;
+      padding: 1rem;
+      box-sizing: border-box;
       padding-bottom: 10px;
+      @include easeOut;
       select {
         background-color: #121212;
-        border: orange 1px solid;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(orange, 0.5);
-        width: 80%;
-        color: white;
+        border: #ebdbb2 1px solid;
+        box-shadow: 0 0 2px #ebdbb2;
+        width: 100%;
+        padding: 5px;
+        color: #ebdbb2;
         text-align: center;
         text-align-last: center;
         font-size: 1rem;
-        -moz-appearance: none;
         -webkit-appearance: none;
+        -mozkit-appearance: none;
         @include easeOut;
-        &:hover {
-          box-shadow: 0 0 10px rgba(orange, 0.5);
+        &:hover  {
+                box-shadow: 0 0 5px #ebdbb2;
+                color: #fe8019;
         }
         &:after {
           content: "";
           position: absolute;
           top: 0;
-          right: 12px;
+          right: 14px;
+          width: 0;
+          height: 0;
+          border: 5px solid transparent;
         }
       }
     }
     .descriptionContainer {
       //container for item descriptions
       background: #121212;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      //border-bottom-left-radius: 5px;
+      //border-bottom-right-radius: 5px;
       text-align: center;
       font-size: 16px;
-      color: orange;
-      text-shadow: 0 0 5px lighten(orange, 10);
+      color: #ebdbb2;
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       .addToCart {
-        box-sizing: border-box;
         position: relative;
         height: 30px;
         width: 30px;
         margin-left: auto;
         background: #121212;
-        color: white;
+        color: #ebdbb2;
+        text-shadow: 1px 1px 0 darken(#ebdbb2, 40);
+        font-weight: 600;
         border: none;
-        border-bottom-right-radius: 5px;
-        box-shadow: none;
         cursor: pointer;
+        border-radius: 0;
+        box-shadow: none;
+        transform: translate(10px, 0);
+        &:hover {
+                @include easeOut;
+                color: #fe8019;
+        }
       }
       .itemPrice {
         text-align: center;
         line-height: 30px;
+        letter-spacing: 1px;
         position: absolute;
       }
     }
@@ -617,9 +649,12 @@ html {
 .Pacifico {
   //font-family: "Pacifico", cursive;
   font-family: 'Lora', serif;
-  color: lighten(orange, 15);
-  text-shadow: 0 0 5px orange;
-  font-size: 28px;
+  color: #ebdbb2;
+  //color: lighten(orange, 15);
+  //text-shadow: 0 0 5px orange;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 5px;
 }
 
 .PacificoPlain {
@@ -657,16 +692,15 @@ html {
   position: fixed;
   z-index: 9999;
   right: 0;
-  bottom: 0;
+  top: 13px;
   width: 100%;
   text-align: right;
   button {
-    background: #121212;
-    border: orange 2px solid;
-    box-shadow: 0 0 5px orange;
+    background: transparent;
+    border: #ebdbb2 1px solid;
+    letter-spacing: 2px;
     padding: 1rem;
-    color: lighten(orange, 10);
-    text-shadow: 0 0 5px orange;
+    color: #ebdbb2;
     cursor: pointer;
   }
 }

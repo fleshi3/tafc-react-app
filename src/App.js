@@ -14,6 +14,22 @@ class App extends Component {
     this.myRef = React.createRef();
   }
 
+  componentDidMount() {
+    const header = document.getElementById("myHeader");
+
+    function myFunction() {
+      if (window.pageYOffset > 990 ) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+    window.onscroll = function() {
+      myFunction();
+    };
+  }
+
   handleClick = () => {
     window.scrollTo(0, 990);
   };
@@ -24,7 +40,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Home handleClick={handleClick} />
-          <Switch ref={this.myRef}>
+          <Switch>
             <Route exact path="/" component={MenuList} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />

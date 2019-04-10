@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const MenuTitle = props => {
   const { title } = props;
   return (
-    <div className="menuTitle">
+    <div className="menuTitle" id="myHeader">
       <span>{title}</span>
     </div>
   );

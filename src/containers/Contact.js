@@ -12,7 +12,7 @@ import MenuTitle from "../components/Menu/MenuTitle";
 const Contact = () => {
   return (
     <div className="Contact">
-      <MenuTitle title="Contact Us" />
+      <MenuTitle title="CONTACT" />
       <div className="ContactInfo" style={{ color: "white" }}>
         <div className="contactLeft">
           <span className="PacificoPlain">Contact Us</span>

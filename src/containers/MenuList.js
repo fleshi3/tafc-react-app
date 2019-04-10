@@ -25,12 +25,17 @@ class MenuList extends Component {
     this.setState({ search: e.target.value });
   };
 
+  componentDidMount() {
+    const el = document.querySelector(".menuList");
+    el.classList.add("fade-in");
+  }
+
   render() {
     const { search } = this.state;
     return (
       <div className="menuList">
-        <MenuTitle title="Our Menu" />
-        <span className="Pacifico">Sort:</span>&emsp; &emsp;
+        <MenuTitle title="MENU" />
+        <span className="Pacifico">ORDER:</span>&emsp; &emsp;
         <SortLink filter={SortFilters.SORT_INITIAL}>Product Index</SortLink>
         <SortLink filter={SortFilters.SORT_DESCENDING}>
           Price (High to Low)

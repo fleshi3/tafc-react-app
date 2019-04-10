@@ -90,7 +90,7 @@ class MenuItem extends Component {
     return (
       <div className={itemContainer} >
         <div className="overlay">
-          <div className="previewContainer">
+                <div className="previewContainer" onClick={() => console.log(title) }>
             <img src={image} alt="" />
           </div>
         </div>
