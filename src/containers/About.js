@@ -12,7 +12,12 @@ const About = () => {
             <small>Insert Caption Here</small>
           </div>
           <div className="storyText">
-            <span className="Pacifico">Our Recipe</span>
+            <span className="Pacifico">THE RECIPE</span>
+            <div className="vertLine" />
+            <div className="quoteText">
+              &quot;Dolor praesentium ipsam atque perferendis eum. Sapiente
+              temporibus consequuntur dolorem debitis nemo.&quot;
+            </div>
             <p>
               Elit reiciendis debitis placeat nisi dolorum Temporibus cumque
               numquam deleniti obcaecati consequatur commodi? Et tempora animi
@@ -39,7 +44,8 @@ const About = () => {
             <small>Inser Caption Here</small>
           </div>
           <div className="storyText">
-            <span className="Pacifico">Our Truck</span>
+            <span className="Pacifico">THE TRUCK</span>
+            <div className="vertLine" />
             <p>
               Elit reiciendis debitis placeat nisi dolorum Temporibus cumque
               numquam deleniti obcaecati consequatur commodi? Et tempora animi
@@ -65,7 +71,8 @@ const About = () => {
             <small>Insert Caption Here</small>
           </div>
           <div className="storyText">
-            <span className="Pacifico">Our Store</span>
+            <span className="Pacifico">OUR STORE</span>
+            <div className="vertLine" />
             <p>
               Elit reiciendis debitis placeat nisi dolorum Temporibus cumque
               numquam deleniti obcaecati consequatur commodi? Et tempora animi

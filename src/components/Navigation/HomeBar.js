@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logoSVG from "../Features/logo";
 
 function HomeBar() {
   const scrollTo = () => window.scrollTo(0, 990);
@@ -21,16 +20,21 @@ function HomeBar() {
         <li>
           <NavLink
             exact
+            to="/menu"
+            activeClassName="NavLinkActive"
+            onClick={scrollTo}
+          >
+            <span className="homeLink">MENU</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            exact
             to="/about"
             activeClassName="NavLinkActive"
             onClick={scrollTo}
           >
             <span className="homeLink">ABOUT</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to="/contact" activeClassName="NavLinkActive">
-            <span className="homeLink">CATERING</span>
           </NavLink>
         </li>
         <li>

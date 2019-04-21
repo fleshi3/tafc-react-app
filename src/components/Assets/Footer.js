@@ -4,7 +4,7 @@ import {
   faHome,
   faClock,
   faPhone,
-  faTruck
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -17,11 +17,11 @@ function Footer() {
   return (
     <footer id="Footer">
       <div className="branding">
-        <div>
+        <div className="brandTitle">
           <span>The Art of Fried Chicken</span>
         </div>
         <br />
-        <small className="textSecondary">STAY CONNECTED</small>
+        <small className="textSecondary">Stay Connected</small>
         <div className="links">
           <a href="https://www.facebook.com/theartoffriedchicken/">
             <div className="linksBubble">
@@ -39,45 +39,41 @@ function Footer() {
             </div>
           </a>
         </div>
-        <small>tafc@gmail.com</small>
       </div>
       <div className="footerNav">
         <ul>
           <li>
-            <h4>
+            <div className="PacificoSmall">
               <FontAwesomeIcon icon={faHome} />
-              Our Store
-            </h4>
+              STORE
+            </div>
             <span> 320 Racecourse Rd, Flemington VIC 3031</span>
           </li>
           <li>
-            <h4>
+            <div className="PacificoSmall">
               <FontAwesomeIcon icon={faClock} />
-              Open Hours
-            </h4>
-            <span style={{ color: "orange" }}>
-              {" "}
-              Mon &mdash; Thu: 5pm to 12am
-            </span>
+              HOURS
+            </div>
+            <span>Mon &mdash; Thu: 5pm to 12am</span>
             <br />
             <span> Friday: 5pm to 1am</span>
             <br />
             <span>Weekends: 11am to 10pm</span>
           </li>
           <li>
-            <h4>
+            <div className="PacificoSmall">
               <FontAwesomeIcon icon={faPhone} />
-              Call Us
-            </h4>
+              PHONE
+            </div>
             <span>(+61) 0402 922 721</span>
           </li>
           <li>
-            <h4>
-              <FontAwesomeIcon icon={faTruck} />
-              Catering
-            </h4>
+            <div className="PacificoSmall">
+              <FontAwesomeIcon icon={faEnvelope} />
+              EMAIL
+            </div>
             <span>
-              <a href="/">Go to Road Map </a>
+              <a href="/contact">See our contact form</a>
             </span>
           </li>
         </ul>

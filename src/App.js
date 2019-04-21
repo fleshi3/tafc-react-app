@@ -18,7 +18,7 @@ class App extends Component {
     const header = document.getElementById("myHeader");
 
     function myFunction() {
-      if (window.pageYOffset > 990 ) {
+      if (window.pageYOffset > 990) {
         header.classList.add("sticky");
       } else {
         header.classList.remove("sticky");
@@ -42,6 +42,7 @@ class App extends Component {
           <Home handleClick={handleClick} />
           <Switch>
             <Route exact path="/" component={MenuList} />
+            <Route exact path="/menu" component={MenuList} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
           </Switch>
