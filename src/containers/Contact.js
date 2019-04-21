@@ -1,13 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faClock,
-  faPhone,
-  faTruck
-} from "@fortawesome/free-solid-svg-icons";
 import MyMapComponent from "../components/Features/GoogleMaps";
 import MenuTitle from "../components/Menu/MenuTitle";
+import Footer from "../components/Assets/Footer";
+import Copyright from "../components/Assets/Copyright";
 
 const Contact = () => {
   return (
@@ -15,38 +10,30 @@ const Contact = () => {
       <MenuTitle title="CONTACT" />
       <div className="ContactInfo" style={{ color: "white" }}>
         <div className="contactLeft">
-          <span className="PacificoPlain">Contact Us</span>
+          <span className="Pacifico">STOREFRONT</span>
           <p>
             Elit rerum consectetur odio aperiam explicabo itaque, fugit.
             Laudantium impedit sint et id ullam Voluptas ad consequuntur in
-            quaerat accusantium aut quod dolorum. Quis soluta maxime eligendi
-            voluptatum ducimus Rem
+            quaerat accusantium aut quod dolorum.
           </p>
           <div className="contactList">
             <ul>
               <li>
-                <FontAwesomeIcon icon={faHome} />
                 <span>&emsp;320 Racecourse Rd, Flemington VIC 3031</span>
               </li>
               <li>
-                <h4>
-                  <FontAwesomeIcon icon={faClock} />
-                  &emsp;Open Hours
-                </h4>
-                <span>&emsp;&emsp;Mon &mdash; Thu: 5pm to 12am</span>
+                <span>&emsp;Mon &mdash; Thu: 5pm to 12am</span>
                 <br />
-                <span> &emsp;&emsp;Friday: 5pm to 1am</span>
+                <span>&emsp;Friday: 5pm to 1am</span>
                 <br />
-                <span>&emsp;&emsp;Weekends: 11am to 10pm</span>
+                <span>&emsp;Weekends: 11am to 10pm</span>
               </li>
               <li>
-                <FontAwesomeIcon icon={faPhone} />
                 &emsp;<span>(+61) 0402 922 721</span>
               </li>
               <li>
-                <FontAwesomeIcon icon={faTruck} />
                 <span>
-                  &emsp;<span>See form below</span>
+                  &emsp;<span>tafc@gmail.com</span>
                 </span>
               </li>
             </ul>
@@ -71,7 +58,7 @@ const Contact = () => {
       </div>
       <div className="ContactForm">
         <div className="formTitle">
-          <span className="PacificoPlain">Get In Touch</span>
+          <span className="Pacifico">SEND A REQUEST</span>
         </div>
         <form>
           <div className="names">
@@ -86,7 +73,7 @@ const Contact = () => {
             <textarea
               className="message"
               rows="5"
-              cols="70"
+              cols="57"
               placeholder="Message"
             />
           </div>
@@ -95,6 +82,8 @@ const Contact = () => {
           </div>
         </form>
       </div>
+      <Footer />
+      <Copyright />
     </div>
   );
 };

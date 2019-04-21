@@ -53,16 +53,21 @@ class CartContainer extends Component {
           className="cartContainer"
           style={{ transform: showCart ? "translate3d(0,0,0)" : "" }}
         >
-          <span className="Pacifico">Cart</span>
+          <span className="Pacifico">CART</span>
+          <div className="vertLine"></div>
           <div className="cartItemContainer">{cart}</div>
           <div className="cartTotal">
-            <span className="Pacifico">Total</span>
+            <span className="Pacifico">TOTAL</span>
+            <div className="vertLine"></div>
             <div>${cartTotal}</div>
+            <button type="button">
+                    check out
+            </button>
           </div>
         </div>
         <div className="showCart">
           <button type="button" onClick={this.handleClick}>
-                  review cart [{total}]
+            review cart [{total}]
           </button>
         </div>
       </div>

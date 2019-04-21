@@ -1,5 +1,7 @@
 import React from "react";
 import MenuTitle from "../components/Menu/MenuTitle";
+import Footer from "../components/Assets/Footer";
+import Copyright from "../components/Assets/Copyright";
 
 const About = () => {
   return (
@@ -71,7 +73,7 @@ const About = () => {
             <small>Insert Caption Here</small>
           </div>
           <div className="storyText">
-            <span className="Pacifico">OUR STORE</span>
+            <span className="Pacifico">THE STORE</span>
             <div className="vertLine" />
             <p>
               Elit reiciendis debitis placeat nisi dolorum Temporibus cumque
@@ -93,6 +95,8 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Footer />
+      <Copyright />
     </div>
   );
 };

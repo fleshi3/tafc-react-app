@@ -438,7 +438,7 @@ html {
   background: white;
   box-sizing: border-box;
   padding: 0 2rem;
-  background: #121212;
+  background: darken(#121212, 3);
   border-top: #ebdbb2 1px solid;
   color: grey;
   font-size: 12px;
@@ -463,10 +463,10 @@ html {
     color: white;
   }
   .footerNav {
-          color: white;
-          h4 {
-                  color: #ebdbb2;
-          }
+    color: white;
+    h4 {
+      color: #ebdbb2;
+    }
     li {
       list-style: none;
       padding: 10px;
@@ -483,7 +483,7 @@ html {
     color: lighten(#282828, 20);
     width: 100%;
     .brandTitle {
-        margin-bottom: 7rem;
+      margin-bottom: 7rem;
       span {
         font-size: 28px;
         color: #ebdbb2;
@@ -533,7 +533,6 @@ html {
 .MyMapComponent {
   border: #ebdbb2 1px solid;
   padding: 5px;
-  box-shadow: 7px 7px 0 #282828;
 }
 
 .Contact {
@@ -544,10 +543,13 @@ html {
     display: flex;
     flex-flow: row nowrap;
     background: rgba(black, 0.8);
-    border: orange 1px solid;
-    box-shadow: 0 0 5px orange;
+    border: #ebdbb2 1px solid;
+    box-shadow: 0 0 5px #ebdbb2;
     box-sizing: border-box;
     padding: 2rem;
+    p {
+      margin: 10px 0;
+    }
     .contactList {
       li {
         list-style: none;
@@ -563,18 +565,26 @@ html {
     display: flex;
     flex-flow: column nowrap;
     background: rgba(black, 0.8);
-    border: orange 1px solid;
-    box-shadow: 0 0 5px orange;
+    border: #ebdbb2 1px solid;
+    box-shadow: 0 0 5px #ebdbb2;
     color: white;
     padding: 2rem;
     margin-top: 2rem;
     box-sizing: border-box;
+    .formTitle {
+      margin-bottom: 15px;
+    }
     .names {
       box-sizing: border-box;
       input {
         width: 300px;
         box-sizing: border-box;
         margin: 5px;
+        padding: 5px;
+        background: transparent;
+        &:focus {
+          border: #ebdbb2 1px solid;
+        }
       }
     }
     .information {
@@ -583,12 +593,22 @@ html {
         width: 300px;
         box-sizing: border-box;
         margin: 5px;
+        padding: 5px;
+        background: transparent;
+        &:focus {
+          border: #ebdbb2 1px solid;
+        }
       }
     }
     .message {
       box-sizing: border-box;
       margin: 5px;
+      margin-bottom: 15px;
       padding: 5px;
+      background: transparent;
+      &:focus {
+        border: #ebdbb2 1px solid;
+      }
     }
   }
 }
@@ -690,16 +710,16 @@ html {
 }
 
 .cartContainer {
-  background: rgba(#121212, 0.95);
-  color: orange;
+  background: darken(#121212, 3);
+  color: #ebdbb2;
   position: fixed;
   z-index: 9999;
   height: 100%;
   top: 0;
   right: 0;
   left: 50%;
-  border-left: orange 3px solid;
-  padding: 2rem;
+  border-left: #121212 1px solid;
+  padding: 3rem;
   transform: translate3d(50%, 0, 0);
   @include easeOut;
   .cartItemContainer {
@@ -712,6 +732,22 @@ html {
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
     }
+  }
+  button {
+          padding: 0.5rem 2rem;
+          margin: 1rem 0;
+          background: transparent;
+          border: #ebdbb2 1px solid;
+          cursor: pointer;
+  }
+  .vertLine {
+          border-bottom: #ebdbb2 1px solid;
+          margin: 10px 0;
+  }
+  .cartTotal {
+          position: absolute;
+          font-size: 20px;
+          bottom: 8rem;
   }
 }
 
