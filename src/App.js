@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 // Components
 import Home from "./containers/Home";
 import MenuList from "./containers/MenuList";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
-import "./scss/App.scss";
 import CartContainer from "./components/Cart/CartContainer";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import "./scss/App.scss";
 
 class App extends Component {
   constructor(props) {
@@ -40,13 +42,26 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Home handleClick={handleClick} />
-          <Switch>
-            <Route exact path="/" component={MenuList} />
-            <Route exact path="/menu" component={MenuList} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-          </Switch>
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  timeout={300}
+                  classNames="fade"
+                >
+                  <Switch>
+                    <Route exact path="/" component={MenuList} />
+                    <Route exact path="/menu" component={MenuList} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/contact" component={Contact} />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
           <CartContainer />
+          <ScrollToTop />
         </div>
       </BrowserRouter>
     );

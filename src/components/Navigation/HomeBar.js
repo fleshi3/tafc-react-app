@@ -12,7 +12,7 @@ function HomeBar() {
             exact
             to="/"
             activeClassName="NavLinkActive"
-            onClick={scrollBack}
+            // onClick={scrollBack}
           >
             <span className="homeLink">HOME</span>
           </NavLink>
@@ -22,7 +22,7 @@ function HomeBar() {
             exact
             to="/menu"
             activeClassName="NavLinkActive"
-            onClick={scrollTo}
+            // onClick={scrollTo}
           >
             <span className="homeLink">MENU</span>
           </NavLink>
@@ -32,7 +32,7 @@ function HomeBar() {
             exact
             to="/about"
             activeClassName="NavLinkActive"
-            onClick={scrollTo}
+            // onClick={scrollTo}
           >
             <span className="homeLink">ABOUT</span>
           </NavLink>
@@ -42,7 +42,7 @@ function HomeBar() {
             exact
             to="/contact"
             activeClassName="NavLinkActive"
-            onClick={scrollTo}
+            // onClick={scrollTo}
           >
             <span className="homeLink">CONTACT</span>
           </NavLink>

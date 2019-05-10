@@ -163,8 +163,8 @@ html {
   @include easeOut;
   background-image: 
     /* top, transparent red */ linear-gradient(
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.9)
+      rgba(0, 0, 0, 0.98),
+      rgba(0, 0, 0, 0.98)
     ),
     /* your image */ url(/img/bg.jpeg);
   background-repeat: no-repeat;
@@ -734,20 +734,20 @@ html {
     }
   }
   button {
-          padding: 0.5rem 2rem;
-          margin: 1rem 0;
-          background: transparent;
-          border: #ebdbb2 1px solid;
-          cursor: pointer;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    background: transparent;
+    border: #ebdbb2 1px solid;
+    cursor: pointer;
   }
   .vertLine {
-          border-bottom: #ebdbb2 1px solid;
-          margin: 10px 0;
+    border-bottom: #ebdbb2 1px solid;
+    margin: 10px 0;
   }
   .cartTotal {
-          position: absolute;
-          font-size: 20px;
-          bottom: 8rem;
+    position: absolute;
+    font-size: 20px;
+    bottom: 8rem;
   }
 }
 
@@ -919,6 +919,36 @@ html {
       border: 0;
     }
   }
+}
+
+.scrollToTop {
+        position: fixed;
+        bottom: 0;
+        z-index: 9999;
+        border: #ebdbb2 1px solid;
+        background: black;
+        padding: 0.5rem ;
+}
+
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
 }
 
 @import "mobile";
