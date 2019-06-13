@@ -1,3 +1,6 @@
+@mixin easeOut {
+  transition: 0.5s ease-out;
+}
 // Widescreens
 @include mediaXL {
   .menuContainer {
@@ -11,5 +14,185 @@
   .About,
   .Contact {
     padding-bottom: 50vh;
+  }
+}
+
+@include mediaSM {
+  .homeBanner {
+    flex-flow: column nowrap;
+    .logoContainer {
+      text-align: center;
+      svg {
+        height: 230px;
+        transform: translateX(-3%);
+      }
+    }
+    .textContainer {
+      text-align: center;
+      .bigText {
+        font-size: 3rem;
+      }
+      .smallText {
+        font-size: 1rem;
+      }
+    }
+  }
+  .menuList,
+  .Contact,
+  .About {
+    padding: 5rem 2rem;
+    padding-bottom: 50rem;
+    .menuTitle {
+      padding: 0 2rem;
+      &.sticky {
+        position: absolute;
+      }
+    }
+  }
+
+  .menuList {
+    .Pacifico {
+      display: none;
+    }
+  }
+
+  .menuContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  // menu sort buttons
+  .Pacifico {
+    //display: none;
+  }
+  .sortButtons {
+    display: flex;
+    flex-flow: row nowrap;
+    button {
+      width: auto;
+    }
+  }
+
+  // footer
+  #Footer {
+    flex-flow: column nowrap;
+    padding: 0;
+    .branding {
+      .brandTitle {
+        margin: 0;
+      }
+    }
+    .footerNews {
+      height: 20rem;
+      width: 100%;
+    }
+  }
+
+  .Copyright {
+    font-size: 9px;
+  }
+
+  .showCart {
+    display: none;
+  }
+
+  // HomeBar navigation
+
+  .Home {
+    .toggleMenu {
+      display: initial;
+      position: fixed;
+      z-index: 99999999;
+      @include easeOut;
+      button {
+              width: 100%;
+              padding: 10px;
+              background: #121212;
+              border-bottom: #ebdbb2 1px solid;
+              font-size: 1rem;
+              letter-spacing: 3px;
+      }
+    }
+  }
+  .homeBar {
+    opacity: 1;
+    @include easeOut; 
+    height: 100%;
+    position: absolute;
+    background: black;
+    .homeList {
+      flex-flow: column nowrap;
+      text-align: center;
+      .homeLink {
+        font-size: 1.5rem;
+      }
+      li {
+        padding: 4rem 0;
+        &:nth-child(1) {
+          padding-right: 0;
+        }
+        &:nth-child(2) {
+          padding-right: 0rem;
+        }
+        &:nth-child(4) {
+          padding-left: 0rem;
+        }
+        &:nth-child(5) {
+          padding-left: 0rem;
+        }
+      }
+    }
+  }
+
+  // About
+  .About {
+    padding: 0;
+    padding-bottom: 64rem;
+    .Story {
+      margin-top: 10vh;
+      .storyImage {
+        width: 100%;
+      }
+      .Segment {
+        .storyText {
+          width: 100%;
+          margin-top: 5rem;
+        }
+        .storyImage {
+          width: 100%;
+        }
+        &:nth-child(1) {
+          .storyImage {
+            float: left;
+          }
+          .storyText {
+            float: left;
+          }
+        }
+        &:nth-child(4) {
+          .storyImage {
+            float: left;
+          }
+          .storyText {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+
+  // Contact
+  .Contact {
+    padding: 8rem 0;
+    padding-bottom: 64rem;
+    .ContactInfo {
+      flex-flow: column nowrap;
+      .contactRight {
+        height: 20rem;
+        .MyMapComponent {
+          height: 20rem;
+          padding: 0;
+        }
+      }
+    }
   }
 }

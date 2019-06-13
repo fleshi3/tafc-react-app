@@ -1,55 +1,55 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function HomeBar() {
-  const scrollTo = () => window.scrollTo(0, 990);
+function HomeBarMobile() {
+  const scrollTo = () => window.scrollTo(0, 667);
   const scrollBack = () => window.scrollTo(0, 0);
   return (
     <div className="homeBar">
       <ul className="homeList">
         <li>
-          <NavLink
+          <Link
             exact
             to="/"
             activeClassName="NavLinkActive"
             onClick={scrollBack}
           >
             <span className="homeLink">HOME</span>
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink
+          <Link
             exact
             to="/menu"
             activeClassName="NavLinkActive"
-            // onClick={scrollTo}
+            onClick={scrollTo}
           >
             <span className="homeLink">MENU</span>
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink
+          <Link
             exact
             to="/about"
             activeClassName="NavLinkActive"
-            // onClick={scrollTo}
+            onClick={scrollTo}
           >
             <span className="homeLink">ABOUT</span>
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink
+          <Link
             exact
             to="/contact"
             activeClassName="NavLinkActive"
-            // onClick={scrollTo}
+            onClick={scrollTo}
           >
             <span className="homeLink">CONTACT</span>
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </div>
   );
 }
 
-export default HomeBar;
+export default HomeBarMobile;

@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import MediaQuery from "react-responsive";
 // Components
 import Home from "./containers/Home";
+import HomeMobile from "./containers/HomeMobile";
 import MenuList from "./containers/MenuList";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
 import CartContainer from "./components/Cart/CartContainer";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Popup from "./components/Features/Popup";
 import "./scss/App.scss";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
+    this.state = { showPopup: false, menuVisible: false };
   }
 
   componentDidMount() {
@@ -34,14 +37,41 @@ class App extends Component {
 
   handleClick = () => {
     window.scrollTo(0, 990);
+    this.setState({
+      showPopup: true
+    });
+  };
+
+  handlePopup = () => {
+    this.setState({
+      showPopup: false
+    });
+  };
+
+  showMenu = () => {
+    const { menuVisible } = this.state;
+    this.setState({
+      menuVisible: !menuVisible
+    });
   };
 
   render() {
-    const { handleClick } = this;
+    const { handleClick, handlePopup, showMenu } = this;
+    const { showPopup, menuVisible } = this.state;
+    const isMobile = window.innerWidth > 375;
     return (
       <BrowserRouter>
         <div className="App">
-          <Home handleClick={handleClick} />
+          {showPopup ? <Popup handlePopup={handlePopup} /> : null}
+          {isMobile ? (
+            <Home handleClick={handleClick} />
+          ) : (
+            <HomeMobile
+              handleClick={handleClick}
+              showMenu={showMenu}
+              menuVisible={menuVisible}
+            />
+          )}
           <Route
             render={({ location }) => (
               <TransitionGroup>
@@ -61,7 +91,6 @@ class App extends Component {
             )}
           />
           <CartContainer />
-          <ScrollToTop />
         </div>
       </BrowserRouter>
     );

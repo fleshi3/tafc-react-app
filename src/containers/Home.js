@@ -8,6 +8,9 @@ class Home extends Component {
     const { handleClick } = this.props;
     return (
       <div className="Home">
+        <div className="toggleMenu">
+          <button>SHOW MENU</button>
+        </div>
         <HomeBar />
         <HomeBanner handleClick={handleClick} />
       </div>

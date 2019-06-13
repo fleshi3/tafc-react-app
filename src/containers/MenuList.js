@@ -36,13 +36,15 @@ class MenuList extends Component {
       <div className="menuList">
         <MenuTitle title="MENU" />
         <span className="Pacifico">ORDER:</span>&emsp; &emsp;
-        <SortLink filter={SortFilters.SORT_INITIAL}>Product Index</SortLink>
-        <SortLink filter={SortFilters.SORT_DESCENDING}>
-          Price (High to Low)
-        </SortLink>
-        <SortLink filter={SortFilters.SORT_ASCENDING}>
-          Price (Low to High)
-        </SortLink>
+        <div className="sortButtons">
+          <SortLink filter={SortFilters.SORT_INITIAL}>Product Index</SortLink>
+          <SortLink filter={SortFilters.SORT_DESCENDING}>
+            Price (High to Low)
+          </SortLink>
+          <SortLink filter={SortFilters.SORT_ASCENDING}>
+            Price (Low to High)
+          </SortLink>
+        </div>
         <MenuItem searchMe={search} />
         <Footer />
         <Copyright />

@@ -19,21 +19,21 @@ const Contact = () => {
           <div className="contactList">
             <ul>
               <li>
-                <span>&emsp;320 Racecourse Rd, Flemington VIC 3031</span>
+                <span>320 Racecourse Rd, Flemington VIC 3031</span>
               </li>
               <li>
-                <span>&emsp;Mon &mdash; Thu: 5pm to 12am</span>
+                <span>Mon &mdash; Thu: 5pm to 12am</span>
                 <br />
-                <span>&emsp;Friday: 5pm to 1am</span>
+                <span>Friday: 5pm to 1am</span>
                 <br />
-                <span>&emsp;Weekends: 11am to 10pm</span>
+                <span>Weekends: 11am to 10pm</span>
               </li>
               <li>
-                &emsp;<span>(+61) 0402 922 721</span>
+                <span>(+61) 0402 922 721</span>
               </li>
               <li>
                 <span>
-                  &emsp;<span>tafc@gmail.com</span>
+                  <span>tafc@gmail.com</span>
                 </span>
               </li>
             </ul>
