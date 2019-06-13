@@ -60,7 +60,7 @@ class App extends Component {
     const { showPopup, menuVisible } = this.state;
     const isMobile = window.innerWidth > 375;
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/tafc-react-app">
         <div className="App">
           {showPopup ? <Popup handlePopup={handlePopup} /> : null}
           {isMobile ? (
