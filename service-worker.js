@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tafc-react-app/precache-manifest.bf685b7f711eddc82fa4da1b911f76d2.js"
+  "/tafc-react-app/precache-manifest.7e88801e1af58af58eed82a4c3e5db59.js"
 );
 
 workbox.clientsClaim();
